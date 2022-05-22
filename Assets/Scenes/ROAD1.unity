@@ -944,6 +944,53 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000001, y: 1.0000001, z: 0.12500003}
   m_Center: {x: 0, y: 0, z: -0.01}
+--- !u!1 &138770546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 138770548}
+  - component: {fileID: 138770547}
+  m_Layer: 0
+  m_Name: CarsSpawner
+  m_TagString: spawnPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &138770547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138770546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9bb292c03d768459b8a4003988cf2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnee: {fileID: 1096161183}
+  stopSpawning: 0
+  spawnTime: 1
+  spawnDelay: 3
+--- !u!4 &138770548
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138770546}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.893, y: 0.054, z: 6.365}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &140720868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15023,13 +15070,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796130707}
-  m_LocalRotation: {x: 0.21920529, y: 0.7628194, z: -0.3252913, w: 0.51404405}
-  m_LocalPosition: {x: -0.48, y: 3.87, z: 5.22}
+  m_LocalRotation: {x: 0.20772009, y: 0.7837668, z: -0.23013203, w: 0.53814614}
+  m_LocalPosition: {x: -2.83, y: 3.25, z: 5.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 46.19, y: 112.05, z: 0}
+  m_LocalEulerAnglesHint: {x: 35.754, y: 112.83, z: 5.51}
 --- !u!1001 &1812355084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17505,7 +17552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 394603961808458029, guid: dcd528f3c0b2bf042babb9d110962ab7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.039
+      value: -0.004
       objectReference: {fileID: 0}
     - target: {fileID: 394603961808458029, guid: dcd528f3c0b2bf042babb9d110962ab7, type: 3}
       propertyPath: m_LocalPosition.z
