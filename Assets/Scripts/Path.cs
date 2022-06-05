@@ -6,7 +6,7 @@ public class Path : MonoBehaviour
 {
     public Color lineColor;
     private List<Transform> nodes = new List<Transform>();
-    void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
         Gizmos.color = lineColor;
         Transform[] pathTransforms = GetComponentsInChildren<Transform>();
@@ -31,7 +31,7 @@ public class Path : MonoBehaviour
                 previousNode = nodes[nodes.Count - 1].position;
             }
             Gizmos.DrawLine(previousNode, currentNode);
-            Gizmos.DrawWireSphere(currentNode, 0.03f);
+            //Gizmos.DrawWireSphere(currentNode, 0.03f);
         }
     }
 }

@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Waypoint
   - Car
-  - spawnPoint
+  - Path
+  - Moto
   layers:
   - Default
   - TransparentFX
