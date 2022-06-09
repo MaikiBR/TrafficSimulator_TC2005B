@@ -36,8 +36,6 @@ public class AICar : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, degreesPerSecond);
         CheckWaypointDistance();
         }
-    //Quaternion targetRotation = Quaternion.LookRotation(direction);
-    //rb.MovePosition(transform.position + nodes[currentNode].transform.position * Time.deltaTime * 0.2f);
     
         private void CheckWaypointDistance()
         {
