@@ -92,9 +92,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4982840834270080}
   - component: {fileID: 4777909037225463157}
+  - component: {fileID: 5639533575416960246}
+  - component: {fileID: 6015903251928582496}
+  - component: {fileID: 6807330052100742228}
   m_Layer: 0
   m_Name: Moto
-  m_TagString: Untagged
+  m_TagString: Moto
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,6 +136,50 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &5639533575416960246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205955739765676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1124fd19fe4822242abacb6389f7ab25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: {fileID: 0}
+  currentNode: 0
+  speed: 160
+  state: Green
+  light: {fileID: 0}
+--- !u!65 &6015903251928582496
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205955739765676}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.53081965, y: 1.7536033, z: 1.312971}
+  m_Center: {x: 0.015296521, y: 0.9268021, z: -1.5980273}
+--- !u!136 &6807330052100742228
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205955739765676}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.99, z: 1.18}
 --- !u!1 &1546227555986244
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +273,7 @@ GameObject:
   - component: {fileID: 4268579463048044}
   - component: {fileID: 33274792717865746}
   - component: {fileID: 23014687075385620}
+  - component: {fileID: 3341215451742640016}
   m_Layer: 0
   m_Name: tuk tuk _Taxi_Blue
   m_TagString: Untagged
@@ -310,6 +358,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3341215451742640016
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907298777872654}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300038, guid: 67b7cda238b841c4e9649ec07ea0a1ed, type: 3}
 --- !u!1 &1927828821300300
 GameObject:
   m_ObjectHideFlags: 0

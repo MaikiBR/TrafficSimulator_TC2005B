@@ -8,33 +8,60 @@ public class AICar : MonoBehaviour
     private Rigidbody rb;
     private List<Transform> nodes;
     public int currentNode = 0;
+    public int speed = 160;
+    public string state = "Green";
+    public Lights light;
+    private string vehicleTag;
+    private manager mgr;
+    private GameObject Mgr; 
 
 
-
-    void Start()
+    public void Paths(Transform _path)
     {
-        rb = GetComponent<Rigidbody>();
-        //m_EulerAngleVelocity = new Vector3(0, 100, 0); 
+        path = _path; 
         Transform[] pathTransforms = path.GetComponentsInChildren<Transform>();
         nodes = new List<Transform>();
         for (int i = 0; i < pathTransforms.Length; i++)
         {
             if (pathTransforms[i] != path.transform)
             {
-                nodes.Add(pathTransforms[i]);
+               nodes.Add(pathTransforms[i]);
             }
         }
+        currentNode = 0; 
+    }
+
+    void Start()
+    {
+        mgr = FindObjectOfType<manager>();  
+        rb = GetComponent<Rigidbody>();
+        //m_EulerAngleVelocity = new Vector3(0, 100, 0); 
+        //transform.rotation = nodes[currentNode].position; 
         transform.LookAt(nodes[currentNode].position);
+        speed = 160; 
     }
 
         void FixedUpdate()
-        {
-        rb.position = Vector3.MoveTowards(transform.position, nodes[currentNode].position, 0.4f * Time.deltaTime);
-        float degreesPerSecond = 90 * Time.deltaTime;
-        Vector3 direction = nodes[currentNode].transform.position - transform.position;
-        Quaternion targetRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, degreesPerSecond);
-        CheckWaypointDistance();
+        { 
+        float velocity = (float)speed * 0.7f / 160f;
+            if (state == "Red")
+            {
+                
+            }
+
+            
+                //rb.position = Vector3.MoveTowards(transform.position, nodes[currentNode].position, 0.0f * Time.deltaTime);
+
+            else
+            {
+                rb.position = Vector3.MoveTowards(transform.position, nodes[currentNode].position, 0.7f * Time.deltaTime);
+                float degreesPerSecond = 90 * Time.deltaTime;
+                Vector3 direction = nodes[currentNode].transform.position - transform.position;
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, degreesPerSecond);
+            }
+        
+            CheckWaypointDistance();
         }
     
         private void CheckWaypointDistance()
@@ -43,7 +70,8 @@ public class AICar : MonoBehaviour
             {
                 if (currentNode == nodes.Count - 1)
                 {
-                    currentNode = 0;
+                mgr.updateScore();    
+                    Destroy(gameObject); 
                 }
                 else
                 {
@@ -54,7 +82,26 @@ public class AICar : MonoBehaviour
 
     public void setPath(Transform _path)
     {
-        path = _path; 
+        path = _path;
+        currentNode = 0;
+    }
+
+    void OnTriggerEnter(Collider collision)
+    {
+        vehicleTag = collision.gameObject.tag; 
+        if (vehicleTag == "Car" || vehicleTag == "Moto" || vehicleTag == "Bus" || vehicleTag == "Truck")
+        {
+            if(collision is BoxCollider)
+            {
+                state = "Red"; 
+            }
+            Debug.Log("DETECTA CARRO"); 
+        }
+    }
+
+    void OnTriggerExit(Collider collision)
+    {
+        state = "Green"; 
     }
 
 }

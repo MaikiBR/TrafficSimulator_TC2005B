@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5155644068091976813}
   - component: {fileID: 8121900574500945502}
+  - component: {fileID: 5614546608489858612}
   m_Layer: 0
   m_Name: Street_4Way
   m_TagString: Untagged
@@ -171,6 +172,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.09913397, z: 1}
   m_Center: {x: 0, y: 0.0020475164, z: 0}
+--- !u!114 &5614546608489858612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3351635067702010651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fc7b5a47840734a9744c88c48c558f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lights:
+  - {fileID: 6710266935060699127}
+  - {fileID: 2960171891773794263}
+  - {fileID: 4022689695951906397}
+  - {fileID: 3200871267127064176}
+  greenLight: 0
+  time: 0
+  num: 0
 --- !u!1 &3376463345247107693
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +769,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrafficLight_2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6eff2536b05601549bad374c41dd7891, type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eff2536b05601549bad374c41dd7891, type: 3}
 --- !u!1 &3455565249948714940 stripped
@@ -760,7 +785,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6eff2536b05601549bad374c41dd7891, type: 3}
   m_PrefabInstance: {fileID: 2537157821765368557}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &2728383950408201064
+--- !u!65 &2940110785888094120
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -771,8 +796,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.12, y: 0.33538267, z: 0.24}
-  m_Center: {x: -0.69, y: -0.18, z: 0.2}
+  m_Size: {x: 0.05, y: 0.33538267, z: 0.5669506}
+  m_Center: {x: -0.71, y: -0.17, z: 0.28356287}
+--- !u!114 &4022689695951906397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3455565249948714940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ee6cbde75f5f846a2a48e741364940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 
 --- !u!1001 &6264394549836982778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -840,6 +878,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrafficLight_2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6eff2536b05601549bad374c41dd7891, type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eff2536b05601549bad374c41dd7891, type: 3}
 --- !u!1 &6498395705292362923 stripped
@@ -852,7 +894,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6eff2536b05601549bad374c41dd7891, type: 3}
   m_PrefabInstance: {fileID: 6264394549836982778}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &229034428303667259
+--- !u!65 &426272624337431115
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -863,8 +905,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.12, y: 0.33538267, z: 0.24}
-  m_Center: {x: -0.69, y: -0.18, z: 0.2}
+  m_Size: {x: 0.05, y: 0.3353827, z: 0.5669506}
+  m_Center: {x: -0.7, y: -0.04, z: 0.2835628}
+--- !u!114 &3200871267127064176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6498395705292362923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ee6cbde75f5f846a2a48e741364940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 
 --- !u!1001 &8287373530161160432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -890,7 +945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6eff2536b05601549bad374c41dd7891, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.13
+      value: 0.117
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6eff2536b05601549bad374c41dd7891, type: 3}
       propertyPath: m_LocalPosition.y
@@ -932,6 +987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrafficLight_2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6eff2536b05601549bad374c41dd7891, type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eff2536b05601549bad374c41dd7891, type: 3}
 --- !u!1 &9206417021526744481 stripped
@@ -944,7 +1003,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6eff2536b05601549bad374c41dd7891, type: 3}
   m_PrefabInstance: {fileID: 8287373530161160432}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &3863996578224913867
+--- !u!65 &6581431224095053290
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -955,8 +1014,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.12, y: 0.33538267, z: 0.24}
-  m_Center: {x: -0.69, y: -0.18, z: 0.2}
+  m_Size: {x: 0.05, y: 0.33538267, z: 0.5669506}
+  m_Center: {x: -0.65, y: -0.15389557, z: 0.28356287}
+--- !u!114 &6710266935060699127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9206417021526744481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ee6cbde75f5f846a2a48e741364940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 
 --- !u!1001 &8313502963771205221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1024,6 +1096,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrafficLight_2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6eff2536b05601549bad374c41dd7891, type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eff2536b05601549bad374c41dd7891, type: 3}
 --- !u!1 &9195813018266524468 stripped
@@ -1036,7 +1112,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6eff2536b05601549bad374c41dd7891, type: 3}
   m_PrefabInstance: {fileID: 8313502963771205221}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &6557185614706223163
+--- !u!65 &343509243947619101
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1047,5 +1123,18 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.12, y: 0.33538267, z: 0.24}
-  m_Center: {x: -0.69, y: -0.18, z: 0.2}
+  m_Size: {x: 0.05, y: 0.33538264, z: 0.56695056}
+  m_Center: {x: -0.7, y: -0.15, z: 0.28356284}
+--- !u!114 &2960171891773794263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9195813018266524468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ee6cbde75f5f846a2a48e741364940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 

@@ -24,11 +24,13 @@ public class CarManager : MonoBehaviour
 
     //[ReadOnly]
     public Cars car = Cars.Car;
+    public Cars moto = Cars.Car;
     void Update()
     {
-        int ran = getRandomCar(); 
+        
         if (!isSpawn)
         {
+            int ran = getRandomCar(); 
             if(ran == (int) Cars.Car)
             {
                 isSpawn = true;
@@ -38,7 +40,7 @@ public class CarManager : MonoBehaviour
             else if(ran == (int) Cars.Moto)
             {
                 isSpawn = true;
-                Spawn("Car", spawnTime, spawnDelay);
+                Spawn("Moto", spawnTime, spawnDelay);
             }
 
             else if (ran == (int) Cars.Truck)
@@ -105,6 +107,6 @@ public class CarManager : MonoBehaviour
 
     int getRandomCar()
     {
-        return Random.RandomRange(0, 4);
+        return Random.Range(0, 4);
     }
 }
