@@ -178,7 +178,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519126113664376}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 5868092373986871393}
   - component: {fileID: -4714748787120034711}
   - component: {fileID: 5663547680038882008}
-  - component: {fileID: 724421290484059507}
+  - component: {fileID: 6989515453294084320}
   m_Layer: 0
   m_Name: YELLOW BUS
   m_TagString: Bus
@@ -457,9 +457,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972778503850442}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.005, y: 0, z: 0}
-  m_LocalScale: {x: 0.04, y: 0.04, z: 0.027}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0.027}
   m_Children:
   - {fileID: 4169502583715224}
   - {fileID: 4799449076983778}
@@ -468,7 +468,7 @@ Transform:
   - {fileID: 4264988907192722}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5868092373986871393
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -513,9 +513,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0696683, y: 2.5313878, z: 3.1234095}
-  m_Center: {x: -0.034834165, y: 1.2556939, z: -8.098063}
---- !u!136 &724421290484059507
+  m_Size: {x: 3.083624, y: 2.5313876, z: 7.4797173}
+  m_Center: {x: 0.083046414, y: 1.2556942, z: -6.382251}
+--- !u!136 &6989515453294084320
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -525,7 +525,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 3
-  m_Direction: 2
-  m_Center: {x: 0, y: 1.28, z: 2.19}
+  m_Radius: 0.627301
+  m_Height: 1.254602
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.42, z: 3.18}

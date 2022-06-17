@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -8,24 +9,29 @@ public class PauseMenu : MonoBehaviour
     public bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public int SCALE; 
-    public GameUI gameUIMenu; 
+    public GameUI gameUIMenu;
+    public bool GameIsStarting = true;
+    public bool starting = true; 
 
     void Start()
     {
         gameUIMenu = GameObject.FindObjectOfType<GameUI>();
+        Time.timeScale = 0f;
+        pauseMenuUI.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GameIsPaused)
+        if (GameIsPaused && starting == false)
         {
             Pause();
         }
-        else
+         else if(!GameIsPaused && starting == false)
         {
             Resume();
         }
+        
     }
 
     public void Resume()
@@ -43,13 +49,27 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
     }
 
+
     public void LoadMenu()
     {
-        Debug.Log("LoadingMenu..."); 
+        
+        Time.timeScale = 1f;
+        //StartCoroutine(LoadAsyncMenu());
+        //SceneManager.SetActiveScene(SceneManager.GetSceneByName("Main"));
+        //Debug.Log("LoadingMenu..."); 
     }
+
+    //IEnumerator LoadAsyncMenu()
+    //{
+    //    AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Main");
+    //    while (!asyncLoad.isDone)
+    //    {
+    //        yield return null;
+    //    }
+    //}
 
     public void FinishGame()
     {
-        Debug.Log("QuittingGame..."); 
+        Time.timeScale = 0f ; 
     }
 }

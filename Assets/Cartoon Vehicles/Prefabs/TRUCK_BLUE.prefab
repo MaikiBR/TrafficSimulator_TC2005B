@@ -344,7 +344,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578189026340018}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 4240607324927514941}
   - component: {fileID: 1749456941664797548}
   - component: {fileID: 7340282249727432214}
-  - component: {fileID: 5983401067565779924}
+  - component: {fileID: 4580290574951074405}
   m_Layer: 0
   m_Name: TRUCK_BLUE
   m_TagString: Truck
@@ -377,9 +377,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897032820101242}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_Children:
   - {fileID: 4791104050166594}
   - {fileID: 4742720705058278}
@@ -390,7 +390,7 @@ Transform:
   - {fileID: 4454908627176300}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &4240607324927514941
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -435,9 +435,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3.0331366, z: 3.011803}
-  m_Center: {x: 1.872198e-14, y: 1.7465681, z: -3.4706576}
---- !u!136 &5983401067565779924
+  m_Size: {x: 2.3258238, y: 4.136531, z: 3.319291}
+  m_Center: {x: -0.014745197, y: 2.2982643, z: -3.5317366}
+--- !u!136 &4580290574951074405
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -447,10 +447,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.9301261
-  m_Height: 3.823147
-  m_Direction: 2
-  m_Center: {x: -1.6261643e-15, y: 0.99, z: 3.01}
+  m_Radius: 1.0719391
+  m_Height: 2.1438785
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.75, z: 3.38}
 --- !u!1 &1931314174196638
 GameObject:
   m_ObjectHideFlags: 0

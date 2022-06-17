@@ -62,7 +62,7 @@ public class RequestControl : MonoBehaviour
     }
     IEnumerator PostDataCorrutina()
     {
-        string url = "https://reqbin.com/echo/post/json";
+        string url = "https://reqbin.com/echo/post/simulation";
         WWWForm form = new WWWForm();
         form = formPost(form); 
         //form.AddField("title", "dataTest");

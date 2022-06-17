@@ -15,19 +15,30 @@ public class manager : MonoBehaviour
 {
     private GameObject Vehicle;
     public int densidad = 0;
-    public int densidadMax = 0; 
+    public int densidadMax = 0;
+    public int spawnCars = 0;
+    public int totalCars = 0; 
     private string scene;
     public GameObject path;
     public List<GameObject> paths; 
     public List<AICar> vehicle;
-    public List<Transform> startPosition; 
+    public List<Transform> startPosition;
+    public List<AICar> spawningVehicles;
+    public List<int> spawnIndex = new List<int> { 0, 1, 2, 3 };
+    //public int[] spawnIndex = { 0, 1, 2, 3 }; 
+    public List<int> speeds; 
     public int length;
     private int startPoint = 0;
     public int carSpeed = 120;
     public int motoSpeed = 160;
     public int busSpeed = 90;
     public int truckSpeed = 70;
-    private int carType; 
+    private int carType;
+    public int crash = 0;
+    public float spawnTime = 3f;
+    public float previousSpawmTime; 
+    private int speed;
+    private bool spawn = false; 
 
     //[ReadOnly]
     public Cars car = Cars.Car;
@@ -38,29 +49,59 @@ public class manager : MonoBehaviour
         {
             startPosition.Add(paths[i].transform.GetChild(0)); 
         }
-
-        InvokeRepeating("Spawn", 1, 1);
+        previousSpawmTime = spawnTime;
+        InvokeRepeating("Spawn", 1, spawnTime/2);
+        spawn = true; 
     }
 
     void Update()
     {
-        //InvokeRepeating("Spawn", 1, 0);
+        if(previousSpawmTime != spawnTime)
+        {
+            spawn = false; 
+            CancelInvoke("Spawn");
+            Spawnee(); 
+        } 
+
+        if(densidad >= densidadMax)
+        {
+            densidadMax = densidad; 
+        }
+    }
+
+    void Spawnee()
+    {
+        previousSpawmTime = spawnTime;
+        InvokeRepeating("Spawn", 1, spawnTime/2);
+        spawn = true;
     }
 
     private void Spawn()
     {
         if(startPoint < paths.Count)
         {
-            carType = Random.Range(0, 4);
-            AICar vehicles = Instantiate(vehicle[carType], startPosition[startPoint].position, startPosition[startPoint].rotation);
-            vehicles.Paths(paths[startPoint].transform);
-            densidad++; 
-            if(densidad >= densidadMax)
+            try
             {
-                densidadMax = densidad; 
+                carType = spawnIndex[Random.Range(0, spawnIndex.Count)];
+                assignSpeed(); 
+                Debug.Log(startPosition[startPoint].rotation);
+                AICar vehicles = Instantiate(vehicle[carType], startPosition[startPoint].position, startPosition[startPoint].rotation);
+                vehicles.speed = speed; 
+                vehicles.Paths(paths[startPoint].transform);
+                densidad++;
+                spawnCars++;
+                if(densidad >= densidadMax)
+                {
+                    densidadMax = densidad; 
+                }
+                //Instantiate(vehicles, startPosition[startPoint].position, startPosition[startPoint].rotation);
+                startPoint++; 
             }
-            //Instantiate(vehicles, startPosition[startPoint].position, startPosition[startPoint].rotation);
-            startPoint++; 
+            catch
+            {
+
+            }
+            
         }
 
         else
@@ -73,6 +114,58 @@ public class manager : MonoBehaviour
     {
         densidad--; 
     }
+
+    void assignSpeed()
+    {
+        switch (carType)
+        {
+            case 0:
+                speed =  busSpeed;
+                break;
+            case 1:
+                speed = motoSpeed;
+                break;
+            case 2:
+                speed = truckSpeed;
+                break;
+            case 3:
+                speed = carSpeed;
+                break; 
+
+        }
+    }
+
+    public void setSpeed(int _carType, int _speed)
+    {
+        switch (_carType)
+        {
+            case 0:
+                busSpeed = _speed;
+                break;
+            case 1:
+                motoSpeed = _speed;
+                break;
+            case 2:
+                truckSpeed = _speed; 
+                break;
+            case 3:
+                carSpeed = _speed;
+                break;
+
+        }
+    }
+
+    public void addSpawningCar(int _carType)
+    {
+        spawnIndex.Add(_carType);
+    }
+
+    public void removeSpawningCar(int _carType)
+    {
+        spawnIndex.Remove(_carType);
+    }
+
+
     //void Update()
     //{
 
@@ -102,29 +195,29 @@ public class manager : MonoBehaviour
     //            isSpawn = true;
     //            Spawn("Car", spawnTime, spawnDelay);
     //        }
-            //switch (car)
-            //{
-            //    case Cars.Car:
-            //        isSpawn = true; 
-            //        Spawn("Car", spawnTime, spawnDelay);
-            //        break; 
+    //switch (car)
+    //{
+    //    case Cars.Car:
+    //        isSpawn = true; 
+    //        Spawn("Car", spawnTime, spawnDelay);
+    //        break; 
 
-            //    case Cars.Moto:
-            //        isSpawn = true;
-            //        Spawn("Moto", spawnTime, spawnDelay);
-            //        break;
+    //    case Cars.Moto:
+    //        isSpawn = true;
+    //        Spawn("Moto", spawnTime, spawnDelay);
+    //        break;
 
-            //    case Cars.Bus:
-            //        isSpawn = true;
-            //        Spawn("Bus", spawnTime, spawnDelay);
-            //        break;
+    //    case Cars.Bus:
+    //        isSpawn = true;
+    //        Spawn("Bus", spawnTime, spawnDelay);
+    //        break;
 
-            //    case Cars.Truck:
-            //        isSpawn = true;
-            //        Spawn("Truck", spawnTime, spawnDelay);
-            //        break;
+    //    case Cars.Truck:
+    //        isSpawn = true;
+    //        Spawn("Truck", spawnTime, spawnDelay);
+    //        break;
 
-            //}
+    //}
     //    }
 
     //}

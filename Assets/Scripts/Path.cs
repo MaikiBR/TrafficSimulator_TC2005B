@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Path : MonoBehaviour
 {
     public Color lineColor;
-    private List<Transform> nodes = new List<Transform>();
+    public List<Transform> nodes = new List<Transform>();
     void OnDrawGizmos()
     {
         Gizmos.color = lineColor;

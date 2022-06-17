@@ -10,6 +10,8 @@ TagManager:
   - Light
   - Truck
   - Bus
+  - Body
+  - Lights
   layers:
   - Default
   - TransparentFX
